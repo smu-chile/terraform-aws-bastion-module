@@ -1,4 +1,7 @@
 data "aws_instances" "bastion" {
+  depends_on = [
+    module.bastion-asg
+  ]
   filter {
     name   = "tag:aws:autoscaling:groupName"
     values = [module.bastion-asg.this_autoscaling_group_name]
