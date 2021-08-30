@@ -26,7 +26,7 @@ module "bastion-asg" {
   min_size                  = 1
   max_size                  = 1
   desired_capacity          = 1
-  wait_for_capacity_timeout = 0
+
   key_name                  = aws_key_pair.deployer.key_name
 
   tags = [

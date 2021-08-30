@@ -3,8 +3,8 @@ data "aws_instances" "bastion" {
     module.bastion-asg
   ]
   filter {
-    name   = "tag:aws:autoscaling:groupName"
-    values = [module.bastion-asg.this_autoscaling_group_name]
+    name   = "tag:Name"
+    values = ["${var.name}-bastion"]
   }
 }
 
