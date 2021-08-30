@@ -1,6 +1,6 @@
 module "ssh_sg" {
   source  = "terraform-aws-modules/security-group/aws"
-  version = "3.0.1"
+  version = "4.3.0"
 
   name        = "ssh-sg"
   description = "Security group which is to allow SSH from Bastion"
@@ -12,11 +12,11 @@ module "ssh_sg" {
   egress_rules        = ["all-all"]
 
   tags = {
-    "kubernetes.io/cluster/${var.name}"         = "owned"
-    Region                                      = "${var.tag-region}"
-    Country                                     = "${var.country}"
-    CECO                                        = "${var.ceco}"
-    Owner                                       = "${var.owner}"
-    Environment                                 = "${var.environment}"
+    "kubernetes.io/cluster/${var.name}" = "owned"
+    Region                              = "${var.tag-region}"
+    Country                             = "${var.country}"
+    CECO                                = "${var.ceco}"
+    Owner                               = "${var.owner}"
+    Environment                         = "${var.environment}"
   }
 }

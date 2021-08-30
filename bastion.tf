@@ -7,7 +7,7 @@ module "bastion-asg" {
 
   image_id                     = var.image-id
   instance_type                = var.instance-type
-  security_groups              = [module.ssh_sg.this_security_group_id]
+  security_groups              = [module.ssh_sg.security_group_id]
   associate_public_ip_address  = true
   recreate_asg_when_lc_changes = true
 
