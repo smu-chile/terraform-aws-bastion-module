@@ -9,7 +9,11 @@ module "ssh_sg" {
   ingress_with_cidr_blocks = [
     {
       rule        = "ssh-tcp"
-      cidr_blocks = "186.148.38.0/25,190.98.247.64/26,${data.github_ip_ranges.test.actions_ipv4}"
+      cidr_blocks = data.github_ip_ranges.test.actions_ipv4
+    },
+    {
+      rule        = "ssh-tcp"
+      cidr_blocks = "186.148.38.0/25,190.98.247.64/26"
     }
   ]
   
