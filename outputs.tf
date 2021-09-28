@@ -15,9 +15,9 @@ output "bastion-public-ips" {
 data "github_ip_ranges" "test" {}
 
 output "github-public-ipv4" {
-  value = data.github_ip_ranges.actions_ipv4
+  value = data.github_ip_ranges.test.actions_ipv4
 }
 
 output "github-public-ipv6" {
-  value = data.github_ip_ranges.actions_ipv6
+  value = data.github_ip_ranges.test.actions_ipv6
 }
