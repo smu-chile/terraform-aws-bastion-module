@@ -9,7 +9,7 @@ module "ssh_sg" {
   ingress_with_cidr_blocks = [
     {
       rule        = "ssh-tcp"
-      cidr_blocks = "${data.github_ip_ranges.test.actions_ipv4}"
+      cidr_blocks = tostring(data.github_ip_ranges.test.actions_ipv4)
     },
   ]
   
