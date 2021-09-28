@@ -12,10 +12,7 @@ module "ssh_sg" {
       cidr_blocks = "186.148.38.0/25,190.98.247.64/26"
     }
   ]
-
-  egress_cidr_blocks  = ["0.0.0.0/0"]
-  egress_rules        = ["all-all"]
-
+  
   tags = {
     "kubernetes.io/cluster/${var.name}" = "owned"
     Region                              = "${var.tag-region}"
