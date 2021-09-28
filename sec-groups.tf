@@ -9,7 +9,7 @@ module "ssh_sg" {
   ingress_with_cidr_blocks = [
     {
       rule        = "ssh-tcp"
-      cidr_blocks = var.ingress-cidr
+      cidr_blocks = join("," , var.ingress-cidr)
       description = "SSH from SMU"
     },
   
