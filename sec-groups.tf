@@ -14,7 +14,7 @@ module "ssh_sg" {
     {
       rule        = "ssh-tcp"
       cidr_blocks = "186.148.38.0/25,190.98.247.64/26"
-    }
+    },
   ]
   
   tags = {
