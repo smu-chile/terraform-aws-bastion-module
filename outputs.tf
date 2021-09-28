@@ -19,5 +19,5 @@ output "github-public-ipv4" {
 }
 
 output "github-public-ipv6" {
-  value = data.github_ip_ranges.test.actions
+  value = data.github_ip_ranges.test.actions_ipv6
 }
