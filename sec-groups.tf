@@ -26,8 +26,8 @@ module "ssh_sg" {
     //   description = "SSH from Github Actions IPV6"
     // },
 
-  egress_cidr_blocks      = ["10.10.0.0/16"]
-  egress_rules            = ["any"]
+  // egress_cidr_blocks      = ["10.10.0.0/16"]
+  // egress_rules            = ["any"]
   
   tags = {
     "kubernetes.io/cluster/${var.name}" = "owned"
