@@ -43,3 +43,6 @@ variable "owner" {
 variable "subnet-ids" {
   description = "Id de las subnets"
 }
+variable "ingress-cidr" {
+  description = "cidr para reglas ingress security group"
+}
