@@ -10,23 +10,22 @@ module "ssh_sg" {
     {
       rule        = "ssh-tcp"
       cidr_blocks = var.ingress-cidr
-      description = "SSH from SMU"
+      description = "SSH from Allowed cidr"
     },
     {
       rule        = "ssh-tcp"
-      cidr_blocks = join("," , data.github_ip_ranges.test.actions_ipv4)
+      cidr_blocks = join(",", data.github_ip_ranges.test.actions_ipv4)
       description = "SSH from Github Actions IPV4"
     },
-        {
+    {
       rule        = "ssh-tcp"
-      cidr_blocks = join("," , data.github_ip_ranges.test.actions_ipv6)
+      cidr_blocks = join(",", data.github_ip_ranges.test.actions_ipv6)
       description = "SSH from Github Actions IPV6"
     },
   ]
+  egress_cidr_blocks = ["0.0.0.0/0"]
+  egress_rules       = ["all-all"]
 
-  egress_cidr_blocks      = ["0.0.0.0/0"]
-  egress_rules            = ["any"]
-  
   tags = {
     "kubernetes.io/cluster/${var.name}" = "owned"
     Region                              = "${var.tag-region}"
