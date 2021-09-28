@@ -18,6 +18,6 @@ output "github-public-ips" {
   value = data.github_ip_ranges.actions_ipv4
 }
 
-output "github-public-ips" {
+output "github-public-ipss" {
   value = data.github_ip_ranges.actions_ipv6
 }
