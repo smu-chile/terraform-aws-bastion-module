@@ -14,15 +14,12 @@ module "ssh_sg" {
     },
     {
       rule        = "ssh-tcp"
-      cidr_blocks = join(",", data.github_ip_ranges.test.actions_ipv4)
-      description = "SSH from Github Actions IPV4"
-    },
-    {
-      rule        = "ssh-tcp"
-      cidr_blocks = join(",", data.github_ip_ranges.test.actions_ipv6)
-      description = "SSH from Github Actions IPV6"
+      cidr_blocks = var.ingress-cidr-ansible
+      description = "SSH from Allowed cidr"
     },
   ]
+
+
   egress_cidr_blocks = ["0.0.0.0/0"]
   egress_rules       = ["all-all"]
 
