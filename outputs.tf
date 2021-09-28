@@ -14,10 +14,10 @@ output "bastion-public-ips" {
 
 data "github_ip_ranges" "test" {}
 
-output "github-public-ips" {
+output "github-public-ipv4" {
   value = data.github_ip_ranges.actions_ipv4
 }
 
-output "github-public-ipss" {
+output "github-public-ipv6" {
   value = data.github_ip_ranges.actions_ipv6
 }
