@@ -28,7 +28,7 @@ module "ssh_sg" {
   description = "Security group which is to allow SSH from Bastion"
   vpc_id      = var.vpc-id
 
-  ingress_with_cidr_blocks = locals.ingress_rules
+  ingress_with_cidr_blocks = local.ingress_rules
   
   egress_cidr_blocks = ["0.0.0.0/0"]
   egress_rules       = ["all-all"]
