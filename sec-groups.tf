@@ -18,12 +18,12 @@ module "ssh_sg" {
       rule        = "ssh-tcp"
       cidr_blocks = var.ingress-cidr-ansible
       description = "SSH from Allowed cidr"
-    }, :
+    } :
     {
       rule        = "ssh-tcp"
       cidr_blocks = var.ingress-cidr
       description = "SSH from Allowed cidr"
-    } 
+    }
   }
 
 
