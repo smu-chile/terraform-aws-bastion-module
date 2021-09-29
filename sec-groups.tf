@@ -6,7 +6,13 @@ module "ssh_sg" {
   description = "Security group which is to allow SSH from Bastion"
   vpc_id      = var.vpc-id
 
-  ingress_with_cidr_blocks = [
+
+  locals {
+    ingress_rules = var.var.ingress-cidr-ansible =! "" ? {
+      rule        = "ssh-tcp"
+      cidr_blocks = var.ingress-cidr
+      description = "SSH from Allowed cidr"
+    } :
     {
       rule        = "ssh-tcp"
       cidr_blocks = var.ingress-cidr
@@ -17,6 +23,11 @@ module "ssh_sg" {
       cidr_blocks = var.ingress-cidr-ansible
       description = "SSH from Allowed cidr"
     },
+  }
+
+
+  ingress_with_cidr_blocks = [
+    local.ingress_rules
   ]
 
 
