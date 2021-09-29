@@ -8,7 +8,7 @@ module "ssh_sg" {
 
 
   locals {
-    ingress_rules = var.var.ingress-cidr-ansible =! "" ? 
+    ingress_rules = var.var.ingress-cidr-ansible != "" ? 
     {
       rule        = "ssh-tcp"
       cidr_blocks = var.ingress-cidr
