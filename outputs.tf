@@ -11,13 +11,3 @@ data "aws_instances" "bastion" {
 output "bastion-public-ips" {
   value = data.aws_instances.bastion.public_ips
 }
-
-data "github_ip_ranges" "test" {}
-
-output "github-public-ipv4" {
-  value = data.github_ip_ranges.test.actions_ipv4
-}
-
-output "github-public-ipv6" {
-  value = data.github_ip_ranges.test.actions_ipv6
-}
