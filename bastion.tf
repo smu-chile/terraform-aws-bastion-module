@@ -20,14 +20,14 @@ module "bastion-asg" {
   ]
 
   # Auto scaling group
-  asg_name                  = "${var.name}-bastion"
-  vpc_zone_identifier       = var.subnet-ids
-  health_check_type         = "EC2"
-  min_size                  = 1
-  max_size                  = 1
-  desired_capacity          = 1
+  asg_name            = "${var.name}-bastion"
+  vpc_zone_identifier = var.subnet-ids
+  health_check_type   = "EC2"
+  min_size            = 1
+  max_size            = 1
+  desired_capacity    = 1
 
-  key_name                  = aws_key_pair.deployer.key_name
+  key_name = aws_key_pair.deployer.key_name
 
   tags = [
     {
