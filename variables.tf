@@ -32,10 +32,6 @@ variable "country" {
   default     = "CL"
   description = "Tag referente a país"
 }
-variable "ceco" {
-  type        = string
-  description = "Tag referente a centro de costo"
-}
 variable "owner" {
   type        = string
   description = "Tag referente a owner. P.e: PRODUCTOS DIGITALES"

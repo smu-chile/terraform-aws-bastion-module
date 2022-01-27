@@ -46,11 +46,6 @@ module "bastion-asg" {
       propagate_at_launch = true
     },
     {
-      key                 = "CECO"
-      value               = "${var.ceco}"
-      propagate_at_launch = true
-    },
-    {
       key                 = "Owner"
       value               = "${var.owner}"
       propagate_at_launch = true
